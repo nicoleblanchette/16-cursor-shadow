@@ -79,7 +79,7 @@ ball.style.top = `${(maxX * x) / 180 - 10}px`;// rotating device around the x ax
   // text.style.color = 'yellow'
 
 
-  text.style.textShadow = `${y - 90}px ${x -90}px 0 chartreuse,`
+  text.style.textShadow = `${y * 2 - 90}px ${x * 2 - 90}px 0 chartreuse,`
    
 };
 
