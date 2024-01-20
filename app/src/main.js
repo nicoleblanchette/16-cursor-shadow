@@ -50,6 +50,7 @@ const maxX = garden.clientWidth - ball.clientWidth;
 const maxY = garden.clientHeight - ball.clientHeight;
 
 function handleOrientation(event) {
+hero.removeEventListener('mousemove', shadow)
 let x = event.beta; // In degree in the range [-180,180)
 let y = event.gamma; // In degree in the range [-90,90)
 
@@ -72,10 +73,11 @@ y += 90;
 
 // 10 is half the size of the ball
 // It centers the positioning point to the center of the ball
-ball.style.left = `${(maxY * y) / 180 - 10}`; // rotating device around the y axis moves the ball horizontally
-ball.style.top = `${(maxX * x) / 180 - 10}`;// rotating device around the x axis moves the ball vertically
+ball.style.left = `${(maxY * y) / 180 - 10}px`; // rotating device around the y axis moves the ball horizontally
+ball.style.top = `${(maxX * x) / 180 - 10}px`;// rotating device around the x axis moves the ball vertically
   text.textContent = 'i did it!'
   text.style.color = 'yellow'
+  text.style.textShadow = `${x+30}px ${y+30}px chartreuse`
    
 };
 
