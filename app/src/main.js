@@ -23,24 +23,24 @@ const shadow = (e) => {
   `;
 };
 
-const handleGyroscope = (event) => {
-  const x = event.angularVelocity.x || 0;
-  const y = event.angularVelocity.y || 0;
-  const z = event.angularVelocity.z || 0;
+// const handleGyroscope = (event) => {
+//   const x = event.angularVelocity.x || 0;
+//   const y = event.angularVelocity.y || 0;
+//   const z = event.angularVelocity.z || 0;
 
-  const xWalk = (x / 60 * walk) - (walk / 2);
-  const yWalk = (y / 60 * walk) - (walk / 2);
+//   const xWalk = (x / 60 * walk) - (walk / 2);
+//   const yWalk = (y / 60 * walk) - (walk / 2);
 
-  text.style.textShadow = `
-    ${xWalk}px ${yWalk}px 0 chartreuse,
-    ${xWalk * -1}px ${yWalk}px 0 violet,
-    ${xWalk}px ${yWalk * -1}px 0 turquoise
-  `;
+//   text.style.textShadow = `
+//     ${xWalk}px ${yWalk}px 0 chartreuse,
+//     ${xWalk * -1}px ${yWalk}px 0 violet,
+//     ${xWalk}px ${yWalk * -1}px 0 turquoise
+//   `;
 
-  p.textContent = `
-  x: ${x} | y: ${y} | z: ${z}
-  `;
-};
+//   p.textContent = `
+//   x: ${x} | y: ${y} | z: ${z}
+//   `;
+// };
 
 const ball = document.querySelector(".ball");
 const garden = document.querySelector(".garden");
@@ -72,8 +72,16 @@ y += 90;
 
 // 10 is half the size of the ball
 // It centers the positioning point to the center of the ball
-ball.style.left = `${(maxY * y) / 180 - 10}px`; // rotating device around the y axis moves the ball horizontally
-ball.style.top = `${(maxX * x) / 180 - 10}px`; // rotating device around the x axis moves the ball vertically
+ball.style.left = `${(maxY * y) / 180 - 10}`; // rotating device around the y axis moves the ball horizontally
+  ball.style.top = `${(maxX * x) / 180 - 10}`;// rotating device around the x axis moves the ball vertically
+  const xWalk = ball.style.left
+  const yWalk= ball.style.left
+  text.style.textShadow = `
+  ${xWalk}px ${yWalk}px 0 chartreuse,
+`
+    //${xWalk * -1}px ${yWalk}px 0 violet,
+  //${xWalk}px ${yWalk * -1}px 0 turquoise
+    ;
 }
 
 window.addEventListener("deviceorientation", handleOrientation);
