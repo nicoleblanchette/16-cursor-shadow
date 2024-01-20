@@ -15,9 +15,9 @@ const shadow = (e) => {
   const yWalk = (y / height * walk) - (walk / 2);
 
   text.style.textShadow = `
-    ${xWalk}px ${yWalk}px 0 chartreuse,
-    ${xWalk * -1}px ${yWalk}px 0 violet,
-    ${xWalk}px ${yWalk * -1}px 0 turquoise
+    ${xWalk}px ${yWalk}px 0 rgba(127, 255, 0, .8),
+    ${xWalk * -1}px ${yWalk}px 0 rgba(238, 130, 238, .8),
+    ${xWalk}px ${yWalk * -1}px 0 rgba(64, 224, 208, .8)
   `;
 };
 
@@ -34,9 +34,10 @@ const handleOrientation = (e) => {
     x = -90;
   }
 
-  text.style.textShadow = `${y * 2 - 10}px ${x * 2 - 10}px 0 chartreuse,
-  ${-y}px ${x}px 0 violet,
-  ${y}px ${-x}px 0 turquoise`;
+  text.style.textShadow = `
+  ${y * 2 - 10}px ${x * 2 - 10}px 0 rgba(127, 255, 0, .8),
+  ${-y}px ${x}px 0 rgba(238, 130, 238, .8),
+  ${y}px ${-x}px 0 rgba(64, 224, 208, .8)`;
 };
 
 
