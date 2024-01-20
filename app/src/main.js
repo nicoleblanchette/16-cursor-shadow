@@ -77,7 +77,7 @@ ball.style.left = `${(maxY * y) / 180 - 10}px`; // rotating device around the y 
 ball.style.top = `${(maxX * x) / 180 - 10}px`;// rotating device around the x axis moves the ball vertically
   text.textContent = 'i did it!'
   text.style.color = 'yellow'
-  text.style.textShadow = `${x+30}px ${y+30}px chartreuse`
+  text.style.textShadow = `${x+30}px ${y+30}px 0 chartreuse`
    
 };
 
