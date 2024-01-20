@@ -74,13 +74,9 @@ y += 90;
 // It centers the positioning point to the center of the ball
 ball.style.left = `${(maxY * y) / 180 - 10}`; // rotating device around the y axis moves the ball horizontally
 ball.style.top = `${(maxX * x) / 180 - 10}`;// rotating device around the x axis moves the ball vertically
-  // const xWalk = ball.style.left
-  // const yWalk= ball.style.left
-  text.style.textShadow = `
-  ${x}px ${y}px 0 chartreuse,
-`
-    //${xWalk * -1}px ${yWalk}px 0 violet,
-  //${xWalk}px ${yWalk * -1}px 0 turquoise
+  text.textContent = 'i did it!'
+  text.style.color = 'yellow'
+   
 };
 
 window.addEventListener("deviceorientation", handleOrientation);
