@@ -68,8 +68,8 @@ x = -90;
 
 // To make computation easier we shift the range of
 // x and y to [0,180]
-x += 90;
-y += 90;
+// x += 90;
+// y += 90;
 
 // 10 is half the size of the ball
 // It centers the positioning point to the center of the ball
@@ -80,7 +80,8 @@ ball.style.top = `${(maxX * x) / 180 - 10}px`;// rotating device around the x ax
 
 
   text.style.textShadow = `${y * 2 - 10}px ${x * 2 - 10}px 0 chartreuse,
-  ${(y - 90) * 1.5}px ${(y - 90) * 1.5}px 0 red`
+  ${-y}px ${x}px 0 red,
+  ${y}px ${-x}px 0 yellow`
    
 };
 
