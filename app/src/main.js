@@ -80,8 +80,8 @@ ball.style.top = `${(maxX * x) / 180 - 10}px`;// rotating device around the x ax
 
   const xWalk = (x / width * walk) - (walk / 2);
   const yWalk = (y / height * walk) - (walk / 2);
-  text.style.textShadow = `${y * 2 / 180 - 10}px ${x * 2 / 180 - 10}px 0 chartreuse`
-  text.style.textShadow = `${(y / window.height * walk) - (walk/2)}px ${(x / window.width * walk) - (walk/2)}px 0 red`
+  text.style.textShadow = `${y * 2 / 180 - 10}px ${x * 2 / 180 - 10}px 0 chartreuse,
+  ${(y / window.height * walk) - (walk / 2)}px ${(x / window.width * walk) - (walk / 2)}px 0 red`
    
 };
 
