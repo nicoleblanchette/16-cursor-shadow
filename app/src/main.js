@@ -50,7 +50,7 @@ const maxX = garden.clientWidth - ball.clientWidth;
 const maxY = garden.clientHeight - ball.clientHeight;
 
 function handleOrientation(event) {
-hero.removeEventListener('mousemove', shadow)
+// hero.removeEventListener('mousemove', shadow)
 let x = event.beta; // In degree in the range [-180,180)
 let y = event.gamma; // In degree in the range [-90,90)
 
@@ -82,6 +82,7 @@ ball.style.top = `${(maxX * x) / 180 - 10}px`;// rotating device around the x ax
   text.style.textShadow = `${y * 2 - 10}px ${x * 2 - 10}px 0 chartreuse,
   ${-y}px ${x}px 0 red,
   ${y}px ${-x}px 0 yellow`
+  p.textContent = 'mousemove disabled because of gyroscope detection'
    
 };
 
