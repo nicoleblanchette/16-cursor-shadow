@@ -54,40 +54,40 @@ const shadow = (e) => {
 
 //javascript
 
-if (window.DeviceMotionEvent && typeof DeviceMotionEvent.requestPermission === 'function') {
-  DeviceMotionEvent.requestPermission()
-    .then(permissionState => {
-      if (permissionState === 'granted') {
-        const gyroscope = new Gyroscope({ frequency: 60 });
+// if (window.DeviceMotionEvent && typeof DeviceMotionEvent.requestPermission === 'function') {
+//   DeviceMotionEvent.requestPermission()
+//     .then(permissionState => {
+//       if (permissionState === 'granted') {
+//         const gyroscope = new Gyroscope({ frequency: 60 });
 
-        gyroscope.addEventListener('reading', handleGyroscope);
-        gyroscope.start();
-      }
-    })
-    .catch(console.error);
-} else {
-  console.log('Gyroscope not supported');
-}
+//         gyroscope.addEventListener('reading', handleGyroscope);
+//         gyroscope.start();
+//       }
+//     })
+//     .catch(console.error);
+// } else {
+//   console.log('Gyroscope not supported');
+// }
 
-const handleGyroscope = (event) => {
-  const hero = document.querySelector('.hero');
-  const text = document.querySelector('h1');
-  const walk = 100;
+// const handleGyroscope = (event) => {
+//   const hero = document.querySelector('.hero');
+//   const text = document.querySelector('h1');
+//   const walk = 100;
 
-  const x = event.angularVelocity.x || 0; // Rotation rate around x-axis
-  const y = event.angularVelocity.y || 0; // Rotation rate around y-axis
-  const z = event.angularVelocity.z || 0; // Rotation rate around z-axis
+//   const x = event.angularVelocity.x || 0; // Rotation rate around x-axis
+//   const y = event.angularVelocity.y || 0; // Rotation rate around y-axis
+//   const z = event.angularVelocity.z || 0; // Rotation rate around z-axis
 
-  const xWalk = (x / 60 * walk) - (walk / 2);
-  const yWalk = (y / 60 * walk) - (walk / 2);
+//   const xWalk = (x / 60 * walk) - (walk / 2);
+//   const yWalk = (y / 60 * walk) - (walk / 2);
 
-  text.style.textShadow = `
-    ${xWalk}px ${yWalk}px 0 chartreuse,
-    ${xWalk * -1}px ${yWalk}px 0 violet,
-    ${xWalk}px ${yWalk * -1}px 0 turquoise
-  `;
-};
+//   text.style.textShadow = `
+//     ${xWalk}px ${yWalk}px 0 chartreuse,
+//     ${xWalk * -1}px ${yWalk}px 0 violet,
+//     ${xWalk}px ${yWalk * -1}px 0 turquoise
+//   `;
+// };
 
 
 hero.addEventListener('mousemove', shadow)
-window.addEventListener('deviceorientation', handleGyroscope)
+// window.addEventListener('deviceorientation', handleGyroscope)
